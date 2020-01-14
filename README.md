@@ -31,7 +31,7 @@ Next, simply run the script from the command line and provide a search query com
 
 - ## Output Dump (optional)
 
-  `(-d / --dump) [True/False]` => Boolean flag to specify whether an output dump is required. This arguement is optional and defaults to False. Output file directory structure can be seen below.
+  `(-d / --dump) [True/False]` => Boolean flag to specify whether an output dump is required. This argument is optional and defaults to False. Output file directory structure can be seen below.
   
   **_USAGE:_** `-d True` **OR** `--dump True`
   
