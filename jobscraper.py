@@ -34,7 +34,7 @@ class JobScraper:
 
         driver.get('https://ca.indeed.com/jobs?' + urlencode(search_params))
 
-        full_job_count = int(driver.find_element_by_id('searchCountPages').text.split(' ')[3])
+        full_job_count = int(driver.find_element_by_id('searchCountPages').text.split(' ')[3].replace(',', ''))
 
         # Each serach result page contains 10 postings, so loop accordingly.
         for job_count in range(0, full_job_count, 10):
@@ -64,8 +64,9 @@ class JobScraper:
                     posting_count += 1
 
                 # Scrape the parameters required for each job posting.
-                job_id = job_card.get('id').split('_')[1].strip()
-                title = job_card.find(class_='jobtitle').string.strip()
+
+                job_id = job_card.get('data-jk').strip()
+                title = job_card.find(class_='jobtitle').text.strip()
                 company = job_card.find(class_='company').text.strip()
                 location = job_card.find(class_='location').text.strip()
 
