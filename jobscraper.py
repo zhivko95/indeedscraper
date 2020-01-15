@@ -65,8 +65,8 @@ class JobScraper:
 
                 # Scrape the parameters required for each job posting.
 
-                job_id = job_card.get('data-jk').strip()
-                title = job_card.find(class_='jobtitle').text.strip()
+                job_id = job_card.get('data-jk')
+                title = job_card.find(class_='jobtitle').text.replace('/', ' ')
                 company = job_card.find(class_='company').text.strip()
                 location = job_card.find(class_='location').text.strip()
 
@@ -94,7 +94,7 @@ class JobScraper:
 
         for job in self.job_postings:
 
-            with open('indeedscraper/jobs/{} ({}).txt'.format(job.title, job.id), 'w+') as job_file:
+            with open('indeedscraper/jobs/{} ({}).txt'.format(job.title, job.id), 'w') as job_file:
 
                 job_file.write('ID: {}\n'.format(job.id))
                 job_file.write('TITLE: {}\n'.format(job.title))
