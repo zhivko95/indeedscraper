@@ -3,7 +3,9 @@ With this tool, you can easily gather information about the most wanted skills r
 
 # Getting Started
 
-First, make sure to have Python installed as well as all of the third party python libraries listed in the requirements file.
+First, make sure to have Python and Chrome installed as well as all of the third party python libraries listed in the requirements file.
+
+Second, download the chromium webdriver for your Chrome verson and include it in your PATH variable.
 
 It is reccommended to source your own skills list as the one which comes included in the source is not exhaustive and lacks some important skills (original list can be found at https://www.onetonline.org/search/hot_tech/). It is mainly provided just as an example for testing. If you use your own skills list, ensure it follows the same format and naming convention as the example.
 
