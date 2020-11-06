@@ -10,7 +10,7 @@ argparser.add_argument('-n', '--num', action='store', dest='num_postings', defau
 argparser.add_argument('-d', '--dump', action='store', dest='dump_flag', type=bool, default=False, help='Boolean flag used to dump output to text files.')
 cmd_args = argparser.parse_args()
 
-js = JobScraper(' '.join(cmd_args.search_term), ' '.join(cmd_args.location), num_postings=cmd_args.num_postings,)
+js = JobScraper(' '.join(cmd_args.search_term), ''.join(cmd_args.location), num_postings=cmd_args.num_postings,)
 
 analyst = JobAnalyst(js.scrape(), dump=cmd_args.dump_flag)
 
